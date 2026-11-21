@@ -24,7 +24,11 @@ app.get("/", (req, res) => {
     });
 });
 
-connectDB(process.env.MONGO_URI);
+if (process.env.MONGO_URI) {
+    connectDB(process.env.MONGO_URI);
+} else {
+    console.log("MONGO_URI not configured. Database operations unavailable.");
+}
 
 app.use("/api/v1/movies", movieRoutes);
 
