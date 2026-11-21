@@ -1,4 +1,4 @@
-import Movie from "../movieModel.js";
+import Movie from "./movieModel.js";
 //CRUD
 //Create
 const createMovie = (req, res) => {
